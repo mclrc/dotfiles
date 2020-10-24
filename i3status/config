@@ -1,0 +1,51 @@
+general {
+        output_format = "i3bar"
+        interval = 1
+}
+
+order += "disk /"
+order += "disk /home"
+order += "ethernet enp34s0"
+order += "memory"
+order += "cpu_usage"
+order += "tztime local"
+
+ethernet enp34s0 {
+        format_up = "ETH: %ip (%speed)"
+        format_down = "ETH: down"
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+        format = "%d/%m/%Y %H:%M:%S"  
+}
+
+cpu_usage {
+        format = "CPU: %usage"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+memory {
+        format = "MEM: %used/%total"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+        format = "/: %free free"
+}
+disk "/home" {
+	format = "/home: %free free"
+}
+
+read_file uptime {
+        path = "/proc/uptime"
+}

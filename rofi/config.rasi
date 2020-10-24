@@ -1,0 +1,8 @@
+configuration {
+ modi: "window,drun,ssh,combi";
+ theme: "slate";
+ font: "inconsolata 11";
+ combi-modi: "window,run,drun,ssh";
+ icon-theme: "Papirus";
+ terminal: "termite";
+}

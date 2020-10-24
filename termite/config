@@ -1,0 +1,7 @@
+[options]
+font = inconsolata 9
+cursor_blink = off
+
+[colors]
+background = rgba(20, 30, 30, 0.70)
+# Solarized dark color scheme
